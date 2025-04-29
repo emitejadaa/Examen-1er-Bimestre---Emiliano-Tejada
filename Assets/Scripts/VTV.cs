@@ -12,11 +12,11 @@ public class VTV : MonoBehaviour
     public float hc;
     // variables del programa
     float minPromedioKm = 10000;
-    int añoActual = 2025;
+    int anioActual = 2025;
     int minModelo = 1900;
     int maxHc = 100;
     int minHc = 5;
-    int añosAuto;
+    int aniosAuto;
     float promedioKM;
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,7 @@ public class VTV : MonoBehaviour
             Debug.Log("VTV no aprobada");
             return;
         }
-        if(modelo<minModelo || modelo > añoActual)
+        if(modelo<minModelo || modelo > anioActual)
         {
             Debug.Log("Año de fabricacion invalido");
             Debug.Log("VTV no aprobada");
@@ -40,7 +40,7 @@ public class VTV : MonoBehaviour
             Debug.Log("VTV no aprobada");
             return;
         }
-        if(vencimiento>= añoActual || vencimiento < modelo)
+        if(vencimiento>= anioActual || vencimiento < modelo)
         {
             Debug.Log("Vencimiento invalido");
             Debug.Log("VTV no aprobada");
@@ -59,8 +59,8 @@ public class VTV : MonoBehaviour
             return;
         }
         // proceso
-        añosAuto = añoActual - modelo;
-        promedioKM = km / añosAuto;
+        aniosAuto = anioActual - modelo;
+        promedioKM = km / aniosAuto;
         Debug.Log("El promedio de kiometraje del vehiculo es de " + promedioKM + " kilometros");
         if (promedioKM < minPromedioKm)
         {
